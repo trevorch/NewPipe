@@ -340,7 +340,8 @@ public class DownloadDialog extends DialogFragment
             Toast.makeText(context, "下载链接未就绪", Toast.LENGTH_SHORT).show();
             return;
         }
-        final ClipboardManager clipboard=(ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        final ClipboardManager clipboard = 
+        (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         final ClipData clip = ClipData.newPlainText("Download URL", downloadUrl);
         clipboard.setPrimaryClip(clip);
         Toast.makeText(context, "链接已复制", Toast.LENGTH_SHORT).show();
