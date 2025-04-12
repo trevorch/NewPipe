@@ -1142,7 +1142,7 @@ public class DownloadDialog extends DialogFragment
 
         //Toast.makeText(context, getString(R.string.download_has_started),
         //        Toast.LENGTH_SHORT).show();
-        String combinedUrls = String.join("\n", urls);
+        final String combinedUrls = String.join("\n", urls);
         Toast.makeText(context, combinedUrls, Toast.LENGTH_LONG).show();
 
         dismiss();
