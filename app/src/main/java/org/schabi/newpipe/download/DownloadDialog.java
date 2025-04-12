@@ -333,22 +333,18 @@ public class DownloadDialog extends DialogFragment
 
         fetchStreamsSize();
     }
-    
+
     private void copyDownloadUrlToClipboard() {
         final String downloadUrl = generateDownloadUrl();
         if (downloadUrl == null || downloadUrl.isEmpty()) {
             Toast.makeText(context, "下载链接未就绪", Toast.LENGTH_SHORT).show();
             return;
         }
-    
-        final ClipboardManager clipboard = 
-            (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        final ClipboardManager clipboard=(ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         final ClipData clip = ClipData.newPlainText("Download URL", downloadUrl);
         clipboard.setPrimaryClip(clip);
-    
         Toast.makeText(context, "链接已复制", Toast.LENGTH_SHORT).show();
     }
-    
     private String generateDownloadUrl() {
         switch (dialogBinding.videoAudioGroup.getCheckedRadioButtonId()) {
             case R.id.audio_button:
@@ -361,7 +357,6 @@ public class DownloadDialog extends DialogFragment
                 return "";
         }
     }
-
     private void initToolbar(final Toolbar toolbar) {
         if (DEBUG) {
             Log.d(TAG, "initToolbar() called with: toolbar = [" + toolbar + "]");
@@ -374,11 +369,9 @@ public class DownloadDialog extends DialogFragment
         toolbar.setNavigationContentDescription(R.string.cancel);
 
         okButton = toolbar.findViewById(R.id.okay);
-        okButton.setEnabled(false); // disable until the download service connection is done
-  
+        okButton.setEnabled(false);
         final ActionMenuItemView copyButton = toolbar.findViewById(R.id.copy_url);
         copyButton.setOnClickListener(v -> copyDownloadUrlToClipboard());
-     
         toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.okay) {
                 prepareSelectedDownload();
