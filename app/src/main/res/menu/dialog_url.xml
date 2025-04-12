@@ -3,7 +3,7 @@
         android:id="@+id/copy_url"
         android:icon="@drawable/ic_content_copy"
         android:title="复制"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/okay"
         android:icon="@drawable/ic_download"
