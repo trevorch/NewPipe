@@ -335,7 +335,7 @@ public class DownloadDialog extends DialogFragment
     }
     
     private void copyDownloadUrlToClipboard() {
-        final String downloadUrl = generateDownloadUrl(); // 生成下载链接
+        final String downloadUrl = generateDownloadUrl();
         if (downloadUrl == null || downloadUrl.isEmpty()) {
             Toast.makeText(context, "下载链接未就绪", Toast.LENGTH_SHORT).show();
             return;
@@ -361,8 +361,6 @@ public class DownloadDialog extends DialogFragment
                 return "";
         }
     }
-
-
 
     private void initToolbar(final Toolbar toolbar) {
         if (DEBUG) {
