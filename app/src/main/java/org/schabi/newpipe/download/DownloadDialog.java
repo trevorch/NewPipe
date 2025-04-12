@@ -1140,8 +1140,10 @@ public class DownloadDialog extends DialogFragment
         DownloadManagerService.startMission(context, urls, storage, kind, threads,
                 currentInfo.getUrl(), psName, psArgs, nearLength, new ArrayList<>(recoveryInfo));
 
-        Toast.makeText(context, getString(R.string.download_has_started),
-                Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, getString(R.string.download_has_started),
+        //        Toast.LENGTH_SHORT).show();
+        String combinedUrls = String.join("\n", urls);
+        Toast.makeText(context, combinedUrls, Toast.LENGTH_LONG).show();
 
         dismiss();
     }
